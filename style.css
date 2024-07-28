@@ -78,6 +78,7 @@
   .container {
     width: 1206px;
     margin: 0 auto;
+    height: auto;
   }
 
 
@@ -675,12 +676,12 @@
     padding: 120px 0 60px;
   }
 
-.master__wrapper {
-  width: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .master__wrapper {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .master__list-item {
     position: relative;
@@ -696,12 +697,12 @@
 
   }
 
-.master__img{
-  z-index: 10;
-  display: flex;
-  position: absolute;
-  left: 30px;
-}
+  .master__img {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    left: 30px;
+  }
 
   .master__list-item:before {
     content: "";
@@ -715,12 +716,8 @@
     height: 248px;
     transform: rotate(-65deg);
     border: 3px solid #72D624;
-    
+
   }
-
-
-
-
 
   .master__text {
     color: #0E0F10;
@@ -728,5 +725,110 @@
     text-transform: uppercase;
     font-weight: 800;
     padding: 53px 0 53px 18rem;
+
+  }
+
+
+  /* Tutorial Telegram */
+
+  .tutorial__tg-section {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-image: url(img/tutorialTG/background.png);
+
+  }
+
+  .tutorial__title {
+    padding: 115px 0 130px;
+  }
+
+
+  .tutorial__wrapper {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    width: 83%;
+    justify-content: space-between;
+  }
+
+
+  .tutorial__text {
+    max-width: max-content;
+    color: #FFFF;
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 40px;
+    z-index: 2;
+  }
+
+  .tutorial__text::before {
+    content: "";
+    top: -48px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    left: -16px;
+    width: 100%;
+    height: 147px;
+    background-color: #77F912;
+    filter: blur(40px);
+    opacity: .4;
+    z-index: -1;
+  }
+
+  .tutorial__text::after {
+    content: "";
+    top: -11px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    left: 18px;
+    width: 74%;
+    height: 87px;
+    background-color: #BFFF8D;
+    filter: blur(26px);
+    opacity: .4;
+    z-index: -1;
+  }
+
+  .tutorial__elipse {
+    border-radius: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    display: block;
+    background-color: #98ADB4;
+    opacity: calc(15%);
+    width: 190px;
+    height: 190px;
+
+  }
+
+  .tutorial__item {
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    position: relative;
+    margin-bottom: 11em;
+  }
+
+
+
+  /* Finish */
+
+  .finish__section {
+    position: relative;
+    background-size: cover;
+    min-height: 100vh;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-image: url(img/finish/background.jpg);
+    padding-bottom: 100px;
 
   }
