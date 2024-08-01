@@ -316,7 +316,12 @@
   }
 
   
-  .croco {
+.croco{
+  display: none;
+}
+
+  .croco.ready {
+    display: block;
     margin-top: 178px;
     position: relative;
     margin-right: -150%;

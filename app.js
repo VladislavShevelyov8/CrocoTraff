@@ -1,12 +1,18 @@
+// Loader
+
 window.addEventListener('load', function () {
   var preloader = document.getElementById('preloader');
   preloader.style.display = 'none';
 });
 
 
-let croco = document.getElementsByClassName("croco");
-
+// CrocoLoad
 
 document.addEventListener('DOMContentLoaded', function() {
-	croco.classList.add('ready');
+  let croco = document.getElementsByClassName("croco")[0];
+  if (croco) {
+      croco.classList.add('ready');
+  }
 });
+
+
