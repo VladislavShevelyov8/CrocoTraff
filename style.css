@@ -6,10 +6,6 @@
     box-sizing: border-box;
   }
 
-  ul[class],
-  ol[class] {
-    padding: 0;
-  }
 
   body,
   h1,
@@ -28,6 +24,15 @@
     margin: 0;
   }
 
+
+  @font-face {
+    font-family: 'Kankin';
+    src: url(Fonts/Kankin.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
   html {
     overflow-x: hidden;
   }
@@ -40,6 +45,7 @@
     font-weight: 600;
     font-family: "Inter", serif;
     color: #000;
+    background-color: #000;
     letter-spacing: -0.01em;
     overflow-x: hidden;
   }
@@ -76,7 +82,7 @@
 
 
   .container {
-    width: 1206px;
+    max-width: 1206px;
     margin: 0 auto;
     height: auto;
   }
@@ -105,6 +111,18 @@
 
   }
 
+  .btn-tg {
+    padding: 13px 65px;
+    border: 3px solid #72D624;
+    background-color: transparent;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+
   /* Load */
 
   /* styles.css */
@@ -124,7 +142,7 @@
   .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #cccccc;
+    border: 5px solid #FFFF;
     border-top-color: #72D624;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -140,24 +158,165 @@
     }
   }
 
+  /* Burger */
+
+  .burger__section {
+    position: absolute;
+    transform: translateY(-100em);
+    display: none;
+    z-index: 22;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-image: url(img/burger/background.jpg);
+    animation-name: BurgerClose;
+    animation-duration: 4s;
+
+  }
+
+
+
+  .burger-area {
+    height: 34px;
+    width: 45px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+
+  .burger__section.off {
+    display: block;
+    animation-duration: 6s;
+    animation-name: BurgerClose;
+  }
+
+  @keyframes BurgerClose {
+    from {
+      transform: translateY(0em);
+    }
+
+    to {
+      transform: translateY(-100em);
+    }
+  }
+
+
+
+  
+
+  .burger__section.active {
+    display: block;
+    transform: translateY(0em);
+    animation-duration: 1s;
+    animation-name: BurgerOpen;
+  }
+
+  @keyframes BurgerOpen {
+    from {
+      transform: translateY(-100em);
+    }
+
+    to {
+      transform: translateY(0em);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+  .burger__wrapper {
+    padding: 0 30px;
+  }
+
+  .burger__list {
+    padding: 200px 0px 100px;
+    width: 100%;
+    margin: 0 20px;
+    display: block;
+    text-align: center;
+  }
+
+
+
+  .burger__link {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+    color: #ffff;
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 2;
+    justify-content: center;
+  }
+
+  .link__text {
+    max-width: max-content;
+    text-align: center;
+    position: relative;
+  }
+
+  .link__text::before {
+    content: "";
+    top: 0px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 130%;
+    background-color: #000;
+    filter: blur(15px);
+    z-index: -2;
+    opacity: .7;
+  }
+
+  .burger__link:hover {
+    color: #72D624;
+    transition: .2s linear;
+  }
+
+  .burger__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+
+
 
 
 
   /* Header */
 
   .header {
-    padding: 20px 0;
+    position: relative;
+    z-index: 1000;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 4px solid rgba(255, 255, 255, 0.3);
     background-color: black;
+    width: 100%;
 
   }
 
   .header-wrapper {
     justify-content: space-between;
     display: flex;
+    width: 100%;
+    max-width: 1206px;
+    margin: 0 auto;
+    
 
 
   }
@@ -223,6 +382,22 @@
     border-radius: 3.67px;
     cursor: pointer;
     background-color: #FFFF;
+    transition: .3s linear;
+
+  }
+
+  .burger.active {
+    background-color: transparent;
+
+  }
+
+  .burger.active::before {
+    transform: rotate(45deg);
+  }
+
+  .burger.active::after {
+    transform: rotate(-45deg);
+
   }
 
   .burger::before {
@@ -236,6 +411,7 @@
     height: 4px;
     transform: translateY(11.25px);
     border-radius: 3.67px;
+    transition: .3s linear;
 
   }
 
@@ -250,6 +426,7 @@
     height: 4px;
     transform: translateY(-11.25px);
     border-radius: 3.67px;
+    transition: .3s linear;
 
   }
 
@@ -257,8 +434,10 @@
 
   .intro__section {
     position: relative;
+    max-height: 100vh;
+    z-index: 2;
     background-size: cover;
-    min-height: 95vh;
+    min-height: 100vh;
     background-position-x: 50%;
     background-repeat: no-repeat;
     background-image: url(img/Intro/background-intro.jpg);
@@ -286,7 +465,6 @@
     color: #FFFF;
     font-size: 190px;
     font-weight: 400;
-    text-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5);
     font-family: "Jolly Lodger", sans-serif;
     text-transform: uppercase;
     line-height: 150px;
@@ -892,7 +1070,7 @@
     z-index: -2;
   }
 
-  .croco__coin::after{
+  .croco__coin::after {
     content: "";
     top: 0px;
     border-radius: 50%;
@@ -909,30 +1087,47 @@
   }
 
   .footer {
-    
+
     padding: 30px 0;
     background-color: #000;
   }
 
-  .footer-wrapper{
+  .footer-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
   }
 
-  .footer__left{
+  .footer__left {
     display: flex;
     width: 50%;
   }
 
-.footer__right {
-  width: 50%;
-  text-align: center;
-}
+  .footer__right {
+    width: 50%;
+    text-align: center;
+  }
 
-.footer__item{
-  color: #FFFF;
-  font-size: 18px;
-  text-transform: uppercase;
-}
+  .info__item {
+    position: relative;
+    color: #FFFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
 
+  .info__item::before {
+    content: "";
+    top: 0px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 130%;
+    background-color: #00000081;
+    filter: blur(15px);
+    z-index: -2;
+    opacity: .5;
+  }
