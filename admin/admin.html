@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CrocoTraff</title>
-  =
+  
   <link rel="stylesheet" href="admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +40,48 @@
   </header>
   <main>
     <section class="profil__section">
+      <div class="burger__section">
+        <div class="container">
+          <div class="burger__wrapper">
+            <ul class="burger__list">
+              <li><a class="burger__link" href="/admin/admin.html">
+                  <p class="link__text">Кабінет</p>
+                </a></li>
+              <li><a class="burger__link" href="#">
+                  <p class="link__text">ПРО НАС</p>
+                </a></li>
+              <li><a class="burger__link" href="#">
+                  <p class="link__text">ВIДГУКИ</p>
+                </a></li>
+              <li><a class="burger__link" href="#">
+                  <p class="link__text">ПIДРИМКА</p>
+                </a></li>
+              <li><a class="burger__link" href="#">
+                  <p class="link__text">Реферальна програма</p>
+                </a></li>
+            </ul>
+            <div class="burger__footer">
+              <div class="burger__left">
+                <p class="info__item">crocotraffTelegram</p>
+                <p class="info__item">crocotraffinfo@gmail.com</p>
+              </div>
+              <div class="burger__right">
+                <button class="btn-tg">
+                  <img src="/img/burger/plane.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="profile__buttons">
-          <a href="#" class="profile-btn active">МIЙ ПРОФIЛЬ</a>
-          <a href="#" class="profile-btn">БАЛАНС</a>
-          <a href="#" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
-          <a href="#" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
+          <a href="#" onclick="Profile();" id="profile" class="profile-btn active">МIЙ ПРОФIЛЬ</a>
+          <a href="#" onclick="Balance();" id="balance" class="profile-btn">БАЛАНС</a>
+          <a href="#" onclick="Offers();" id="offers" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
+          <a href="#" onclick="Generation();" id="generation" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
         </div>
-        <article class="profile__content">
+        <article style="display: none;" class="profile__content section">
           <div class="profile__left">
             <img class="profile__img" src="img/profile/avatar.png" alt="">
             <span class="profile__mail">yros.korn@gmail.com</span>
@@ -62,11 +96,34 @@
             <a href="#" class="registration-btn">Реєстрація</a>
           </div>
         </article>
+
+        <article class="balance__content section">
+          <div class="balance">
+            <h1 class="balance__left-title">БАЛАНС</h1>
+            <div class="UAH__group">
+              <h2 class="group__balance-title">БАЛАНС UAH</h2>
+              <div class="UAH__numbers">0.00</div>
+              <div class="UAH__currency">UAH</div>
+            </div>
+            <div class="USD__group">
+              <h2 class="group__balance-title">БАЛАНС USD</h2>
+              <div class="USD__numbers">0.00</div>
+              <div class="USD__currency">USD</div>
+            </div>
+          </div>
+          <div class="balance__right"></div>
+        </article>
+
+        <article style="display: none;" class="offers__content section">
+
+        </article>
+
+        <article style="display: none;" class="generation__content section">
+
+        </article>
       </div>
     </section>
-    <section class="balance__section">
-     
-    </section>
+   
     
   </main>
 

@@ -32,6 +32,100 @@ function burger() {
     burgerSection.classList.toggle("active");
     area.classList.add("off");
   }
+}
+
+        // Balance Function
+
+function Balance() {
+  let sections = document.querySelectorAll('.section');
+  let button = document.getElementById("balance");
+  let activeElements = document.querySelectorAll('.active');
+  let activeSection = document.querySelector(".balance__content");
+
+
+  for (let section of sections) {
+    if (section.style.display !== 'none') {
+      section.style.display = 'none';
+      break;
+    }
+  }
+
+  activeElements.forEach(function (element) {
+    element.classList.remove('active');
+  });
+  button.classList.add("active");
+  activeSection.style.display = "flex";
 
 }
 
+          // Offers Function
+
+function Offers() {
+  let sections = document.querySelectorAll('.section');
+  let button = document.getElementById("offers");
+  let activeElements = document.querySelectorAll('.active');
+  let activeSection = document.querySelector(".offers__content");
+
+
+  for (let section of sections) {
+    if (section.style.display !== 'none') {
+      section.style.display = 'none';
+      break;
+    }
+  }
+
+  activeElements.forEach(function (element) {
+    element.classList.remove('active');
+  });
+  button.classList.add("active");
+  activeSection.style.display = "flex";
+
+}
+
+            // Profile Function
+
+function Profile() {
+  let sections = document.querySelectorAll('.section');
+  let button = document.getElementById("profile");
+  let activeElements = document.querySelectorAll('.active');
+  let activeSection = document.querySelector(".profile__content");
+
+
+  for (let section of sections) {
+    if (section.style.display !== 'none') {
+      section.style.display = 'none';
+      break;
+    }
+  }
+
+  activeElements.forEach(function (element) {
+    element.classList.remove('active');
+  });
+  button.classList.add("active");
+  activeSection.style.display = "flex";
+
+}
+
+              // Generation Function
+
+function Generation() {
+  let sections = document.querySelectorAll('.section');
+  let button = document.getElementById("generation");
+  let activeElements = document.querySelectorAll('.active');
+  let activeSection = document.querySelector(".generation__content");
+
+
+  for (let section of sections) {
+    if (section.style.display !== 'none') {
+      section.style.display = 'none';
+      break;
+    }
+  }
+
+  activeElements.forEach(function (element) {
+    element.classList.remove('active');
+  });
+  button.classList.add("active");
+  activeSection.style.display = "flex";
+
+}
