@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous">
+    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrocoTraff</title>
+  =
+  <link rel="stylesheet" href="admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jolly+Lodger&family=Karantina:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <script src="/app.js"></script>
+  <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <header class="header">
+    <div class="header-wrapper">
+      <div class="header__left">
+        <img src="/img/logo.png" alt="Croco" class="header__logo">
+        <span class="logo__text">Croco <div>Traff</div></span>
+      </div>
+      <div class="header__right">
+        <button class="login-btn">Вхід</button>
+        <button class="register-btn">Реєстрація</button>
+        <div onclick="burger();" class="burger-area">
+          <button class="burger"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="profil__section">
+      <div class="container">
+        <div class="profile__buttons">
+          <a href="#" class="profile-btn active">МIЙ ПРОФIЛЬ</a>
+          <a href="#" class="profile-btn">БАЛАНС</a>
+          <a href="#" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
+          <a href="#" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
+        </div>
+        <article class="profile__content">
+          <div class="profile__left">
+            <img class="profile__img" src="img/profile/avatar.png" alt="">
+            <span class="profile__mail">yros.korn@gmail.com</span>
+          </div>
+          <div class="profile__right">
+            <button class="TikTok-btn"><input class="TikTok-input" placeholder="Введiть посилання на TikTok..." value=""
+                type="url"></button>
+            <button class="transparent-btn">
+              ЗАВАНТАЖИТИ ФОТО
+              <input class="transparent-input" value="" type="file">
+            </button>
+            <a href="#" class="registration-btn">Реєстрація</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="balance__section">
+     
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer__left">
+          <img src="/img/logo.png" alt="Croco" class="footer__logo">
+          <span class="logo__text">Croco <div>Traff</div></span>
+        </div>
+        <div class="footer__right">
+          <p class="info__item">crocotraffTelegram</p>
+          <p class="info__item">crocotraffinfo@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+</body>
+
+</html>

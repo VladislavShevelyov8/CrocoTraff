@@ -1,0 +1,521 @@
+/* System */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+@font-face {
+  font-family: 'Kankin';
+  src: url(/Fonts/Kankin.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html {
+  overflow-x: hidden;
+}
+
+section{
+padding-bottom: 100px;
+}
+
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: "Inter", serif;
+  color: #000;
+  background-color: #000;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+.container {
+  max-width: 1206px;
+  margin: 0 auto;
+  height: auto;
+}
+
+
+button {
+  text-transform: uppercase;
+}
+
+/* Variable */
+
+.h1 {
+  font-weight: 800;
+  font-size: 65px;
+  color: #FFFF;
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.h2 {
+  font-weight: 600;
+  color: #FFFF;
+  font-size: 25px;
+  letter-spacing: -1%;
+  line-height: auto;
+
+}
+
+.btn-tg {
+  padding: 13px 65px;
+  border: 3px solid #72D624;
+  background-color: transparent;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+
+
+/* Load */
+
+/* styles.css */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #FFFF;
+  border-top-color: #72D624;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Header */
+
+.header {
+  position: relative;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+  background-color: black;
+  width: 100%;
+
+}
+
+.header-wrapper {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  max-width: 1206px;
+  margin: 0 auto;
+
+
+
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__right {
+  align-items: center;
+  display: flex;
+
+}
+
+.logo__text {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 32px;
+  font-family: "Kankin", serif;
+  color: #FFFF;
+  margin-left: 10px;
+}
+
+.login-btn {
+  padding: 10px 59.02px 11.01px;
+  border: 3px solid #72D624;
+  background-color: transparent;
+  border-radius: 6px;
+  color: #FFFF;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  transition: .3s linear;
+  background-color: #72D624;
+  box-shadow: 0 0 107px 0 rgba(114, 214, 36, 0.27);
+
+}
+
+.register-btn {
+  padding: 10px 27.03px 11.01px 28.01px;
+  background-color: #FFFF;
+  border-radius: 6px;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.burger {
+  position: relative;
+  width: 44px;
+  height: 4px;
+  color: #FFFF;
+  border: 0;
+  border-radius: 3.67px;
+  cursor: pointer;
+  background-color: #FFFF;
+  transition: .3s linear;
+
+}
+
+.burger.active {
+  background-color: transparent;
+
+}
+
+.burger.active::before {
+  transform: rotate(45deg);
+}
+
+.burger.active::after {
+  transform: rotate(-45deg);
+
+}
+
+.burger::before {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  background: #FFFF;
+  position: absolute;
+  width: 44px;
+  height: 4px;
+  transform: translateY(11.25px);
+  border-radius: 3.67px;
+  transition: .3s linear;
+
+}
+
+.burger::after {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  background: #FFFF;
+  position: absolute;
+  width: 44px;
+  height: 4px;
+  transform: translateY(-11.25px);
+  border-radius: 3.67px;
+  transition: .3s linear;
+}
+
+
+/* Profile */
+
+
+.profil__section {
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(img/profile/background.jpg);
+}
+
+.profile__buttons {
+  padding: 65px 0 60px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.profile-btn {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  color: #0E0F10;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 278px;
+  height: 53px;
+  background-color: #FFFF;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-btn.active:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: #72D624;
+  bottom: -1em;
+  left: 0;
+  border-radius: 10px;
+
+}
+
+
+.profile__img {
+  border-radius: 50%;
+}
+
+.profile__content {
+  background-color: #3B3B3B;
+  padding: 85px 170px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.profile__left {
+  display: block;
+  max-width: min-content;
+  height: auto;
+  margin-right: 100px;
+}
+
+.profile__mail {
+  display: flex;
+  padding-top: 50px;
+  color: #FFFF;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.profile__right {
+  width: 50%;
+  margin-left: 100px;
+
+}
+
+.TikTok-input {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  color: #0E0F10;
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  height: 68px;
+  background-color: #EFEFEF;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+
+.TikTok-input::placeholder {
+  text-align: center;
+  color: #0E0F10;
+  opacity: 1;
+}
+
+
+.TikTok-btn {
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+
+.transparent-btn {
+  display: block;
+  margin: 45px 0;
+  position: relative;
+  padding: 11px 59.02px 11.01px;
+  width: 100%;
+  height: 73px;
+  border: 3px solid #72D624;
+  background-color: transparent;
+  border-radius: 6px;
+  color: #FFFF;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.transparent-input {
+  opacity: 0;
+  position: absolute;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 0;
+
+}
+
+.registration-btn {
+  display: inline-block;
+  border-radius: 6px;
+  background: #72D624;
+  border: none;
+  padding: 23px 71px;
+  cursor: pointer;
+  color: #FFFF;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 100%;
+  height: 73px;
+  text-decoration: none;
+}
+
+.registration-btn:hover {
+  transition: .3s linear;
+  box-shadow: 0 0 107px 0 rgba(114, 214, 36, 0.27);
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+
+.footer {
+  position: relative;
+  padding: 30px 0;
+  background-color: #000;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+
+.footer__left {
+  display: flex;
+  width: 50%;
+}
+
+.footer__right {
+  width: 50%;
+  text-align: center;
+}
+
+.info__item {
+  position: relative;
+  color: #FFFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.info__item::before {
+  content: "";
+  top: 0px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 130%;
+  background-color: #00000081;
+  filter: blur(15px);
+  z-index: -2;
+  opacity: .5;
+}
