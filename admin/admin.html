@@ -8,8 +8,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CrocoTraff</title>
-  
+
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -81,7 +82,7 @@
           <a href="#" onclick="Offers();" id="offers" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
           <a href="#" onclick="Generation();" id="generation" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
         </div>
-        <article style="display: none;" class="profile__content section">
+        <article class="profile__content section">
           <div class="profile__left">
             <img class="profile__img" src="img/profile/avatar.png" alt="">
             <span class="profile__mail">yros.korn@gmail.com</span>
@@ -93,25 +94,40 @@
               ЗАВАНТАЖИТИ ФОТО
               <input class="transparent-input" value="" type="file">
             </button>
-            <a href="#" class="registration-btn">Реєстрація</a>
+            <a href="#" class="registration-btn">додати</a>
           </div>
         </article>
 
-        <article class="balance__content section">
+        <article style="display: none;" class="balance__content section">
           <div class="balance">
-            <h1 class="balance__left-title">БАЛАНС</h1>
+            <h1 class="balance__title">БАЛАНС</h1>
             <div class="UAH__group">
-              <h2 class="group__balance-title">БАЛАНС UAH</h2>
-              <div class="UAH__numbers">0.00</div>
-              <div class="UAH__currency">UAH</div>
+              <h4 class="group__balance-title">БАЛАНС UAH</h4>
+              <div class="money__group">
+                <div class="UAH__numbers">0.00</div>
+                <div class="UAH__currency">UAH</div>
+              </div>
             </div>
             <div class="USD__group">
-              <h2 class="group__balance-title">БАЛАНС USD</h2>
-              <div class="USD__numbers">0.00</div>
-              <div class="USD__currency">USD</div>
+              <h4 class="group__balance-title">БАЛАНС USD</h4>
+              <div class="money__group">
+                <div class="USD__numbers">0.00</div>
+                <div class="USD__currency">USD</div>
+              </div>
+            </div>
+            <div style="display: flex; margin-top: 100px;" class="btn-group">
+              <button href="#" class="green-btn">поповнити</a>
+                <button class="transparent-btn2">зняти гроші</button>
             </div>
           </div>
-          <div class="balance__right"></div>
+          <div class=" balance">
+            <h1 class="balance__left-title">РЕКВЕЗИТИ</h1>
+            <h4 class="group__balance-title">Номер карти</h4>
+            <input value="" class="Karte" type="text">
+            <h4 class="group__balance-title">TRC20</h4>
+            <input value="" class="Karte" type="text">
+            <button style="margin-top: 25px;" href="#" class="green-btn">ЗБЕРIГТИ</a>
+          </div>
         </article>
 
         <article style="display: none;" class="offers__content section">
@@ -123,8 +139,8 @@
         </article>
       </div>
     </section>
-   
-    
+
+
   </main>
 
   <footer class="footer">

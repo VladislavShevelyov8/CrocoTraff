@@ -344,7 +344,7 @@
     cursor: pointer;
   }
 
-  .login-btn:hover {
+  .login-btn:hover, .transparent-btn2:hover {
     transition: .3s linear;
     background-color: #72D624;
     box-shadow: 0 0 107px 0 rgba(114, 214, 36, 0.27);
