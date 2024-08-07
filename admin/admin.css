@@ -3,6 +3,134 @@ body {
 }
 
 
+
+/* Burger */
+
+.burger__section {
+  position: absolute;
+  transform: translateY(-100em);
+  display: none;
+  z-index: 22;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  background-image: url(img/burger/background.jpg);
+  animation-name: BurgerClose;
+  animation-duration: 4s;
+
+}
+
+
+
+.burger-area {
+  height: 34px;
+  width: 45px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+.burger__section.off {
+  display: block;
+  animation-duration: 6s;
+  animation-name: BurgerClose;
+}
+
+@keyframes BurgerClose {
+  from {
+    transform: translateY(0em);
+  }
+
+  to {
+    transform: translateY(-100em);
+  }
+}
+
+
+
+
+
+.burger__section.active {
+  display: block;
+  transform: translateY(0em);
+  animation-duration: 1s;
+  animation-name: BurgerOpen;
+}
+
+@keyframes BurgerOpen {
+  from {
+    transform: translateY(-100em);
+  }
+
+  to {
+    transform: translateY(0em);
+  }
+}
+
+.burger__wrapper {
+  padding: 0 30px;
+}
+
+.burger__list {
+  padding: 200px 0px 100px;
+  width: 100%;
+  margin: 0 20px;
+  display: block;
+  text-align: center;
+}
+
+
+
+.burger__link {
+  display: flex;
+  position: relative;
+  margin-bottom: 40px;
+  color: #ffff;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 2;
+  justify-content: center;
+}
+
+.link__text {
+  max-width: max-content;
+  text-align: center;
+  position: relative;
+}
+
+.link__text::before {
+  content: "";
+  top: 0px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 130%;
+  background-color: #000;
+  filter: blur(15px);
+  z-index: -2;
+  opacity: .7;
+}
+
+.burger__link:hover {
+  color: #72D624;
+  transition: .2s linear;
+}
+
+.burger__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+
+
+
 /* Profile */
 
 
