@@ -8,7 +8,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CrocoTraff</title>
-
   <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,13 +25,13 @@
   </div>
   <header class="header">
     <div class="header-wrapper">
-      <div class="header__left">
+      <a href="/index.html" class="header__left">
         <img src="/img/logo.png" alt="Croco" class="header__logo">
         <span class="logo__text">Croco <div>Traff</div></span>
-      </div>
+      </a>
       <div class="header__right">
         <button class="login-btn">Вхід</button>
-        <button class="register-btn">Реєстрація</button>
+        <a href="/admin/reg__section/registration.html" class="register-btn">Реєстрація</a>
         <div onclick="burger();" class="burger-area">
           <button class="burger"></button>
         </div>
@@ -82,9 +81,9 @@
           <a href="#" onclick="Offers();" id="offers" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
           <a href="#" onclick="Generation();" id="generation" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
         </div>
-        <article class="profile__content section">
+        <article style="display: none;" class="profile__content section">
           <div class="profile__left">
-            <img class="profile__img" src="img/profile/avatar.png" alt="">
+            <img class="profile__img" src="/admin/img/profile/avatar.png" alt="">
             <span class="profile__mail">yros.korn@gmail.com</span>
           </div>
           <div class="profile__right">
@@ -100,7 +99,7 @@
 
         <article style="display: none;" class="balance__content section">
           <div class="balance">
-            <h1 class="balance__title">БАЛАНС</h1>
+            <h1 class="balance__title h3">БАЛАНС</h1>
             <div class="UAH__group">
               <h4 class="group__balance-title">БАЛАНС UAH</h4>
               <div class="money__group">
@@ -109,7 +108,7 @@
               </div>
             </div>
             <div class="USD__group">
-              <h4 class="group__balance-title">БАЛАНС USD</h4>
+              <h4 class="group__balance-title h4">БАЛАНС USD</h4>
               <div class="money__group">
                 <div class="USD__numbers">0.00</div>
                 <div class="USD__currency">USD</div>
@@ -117,7 +116,7 @@
             </div>
             <div style="display: flex; margin-top: 100px;" class="btn-group">
               <button href="#" class="green-btn">поповнити</a>
-                <button class="transparent-btn2">зняти гроші</button>
+              <button class="transparent-btn2">зняти гроші</button>
             </div>
           </div>
           <div class=" balance">
@@ -131,11 +130,67 @@
         </article>
 
         <article style="display: none;" class="offers__content section">
+          <h1 class="offers__admin-title">ДОСТУПНI ОФФЕРИ</h1>
+          <div class="offers__admin-items">
+            <h4 style="text-align:left;" class="offers__admin-item big__title">Назва каналу</h4>
+            <h4 class="offers__admin-item big__title">Профіт</h4>
+            <h4 style="text-align:right;" class="offers__admin-item big__title">Зашилок</h4>
+          </div>
+          <div class="offers__admin-items">
+            <div style="text-align: left;" class="offers__admin-item">CrocoTraff</div>
+            <div class="offers__admin-item">5 UAH</div>
+            <div style="text-align: right;" class="offers__admin-item">2000</div>
+          </div>
+          <div class="offers__admin-items">
+             <div style="text-align: left;" class="offers__admin-item">CrocoCrypto</div>
+            <div class="offers__admin-item">7 UAH</div>
+            <div style="text-align: right;" class="offers__admin-item">354</div>
+          </div>
+          <div class="offers__admin-items">
+            <div style="text-align: left;" class="offers__admin-item">ITCartel</div>
+            <div class="offers__admin-item">4 UAH</div>
+            <div style="text-align: right;" class="offers__admin-item">1387</div>
+          </div>
+          <div class="offers__admin-items">
+            <div style="text-align: left;" class="offers__admin-item">ITCartel|Garant</div>
+            <div class="offers__admin-item">10 UAH</div>
+            <div style="text-align: right;" class="offers__admin-item">5690</div>
+          </div>
 
         </article>
 
-        <article style="display: none;" class="generation__content section">
-
+        <article style="display: flex;" class="generation__content section">
+          <div class="generation__left">
+            <h1 class="offers__admin-title">ВАШИ ПОСИЛАННЯ</h1>
+            <div class="offers__admin-items">
+              <h4 style="text-align:left;" class="offers__admin-item  big__title ">Назва</h4>
+              <h4 class="offers__admin-item big__title">Посилання</h4>
+              <h4 style="text-align:right; " class="offers__admin-item big__title ">Клиенти</h4>
+            </div>
+            <div class="offers__admin-items">
+              <div style="text-align: left;" class="offers__admin-item">CrocoTraff</div>
+              <div class="offers__admin-item">5 UAH</div>
+              <div style="text-align: right;" class="offers__admin-item">2000</div>
+            </div>
+            <div class="offers__admin-items">
+               <div style="text-align: left;" class="offers__admin-item">CrocoCrypto</div>
+              <div class="offers__admin-item">7 UAH</div>
+              <div style="text-align: right;" class="offers__admin-item">354</div>
+            </div>
+            <div class="offers__admin-items">
+              <div style="text-align: left;" class="offers__admin-item">ITCartel</div>
+              <div class="offers__admin-item">4 UAH</div>
+              <div style="text-align: right;" class="offers__admin-item">1387</div>
+            </div>
+            <div class="offers__admin-items">
+              <div style="text-align: left;" class="offers__admin-item">ITCartel|Garant</div>
+              <div class="offers__admin-item">10 UAH</div>
+              <div style="text-align: right;" class="offers__admin-item">5690</div>
+            </div>
+          </div>
+          <div class="generation__right">
+            <h4 class="big__title"></h4>
+          </div>
         </article>
       </div>
     </section>

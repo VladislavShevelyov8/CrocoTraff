@@ -78,7 +78,7 @@ function Offers() {
     element.classList.remove('active');
   });
   button.classList.add("active");
-  activeSection.style.display = "flex";
+  activeSection.style.display = "block";
 
 }
 
@@ -129,3 +129,9 @@ function Generation() {
   activeSection.style.display = "flex";
 
 }
+
+
+
+                  // Registration
+
+

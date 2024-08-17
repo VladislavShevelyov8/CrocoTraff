@@ -1,0 +1,308 @@
+body {
+  background-image: url(/img/burger/background.jpg);
+}
+
+
+
+/* Burger */
+
+.burger__section {
+  position: absolute;
+  transform: translateY(-100em);
+  display: none;
+  z-index: 22;
+  background-size: cover;
+  min-height: 138.5vh;
+  min-width: 100vw;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  background-image: url(/img/burger/background.jpg);
+  animation-name: BurgerClose;
+  animation-duration: 4s;
+
+}
+
+
+.h3-reg {
+  font-size: 23px;
+  color: #FFFF;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.burger-area {
+  height: 34px;
+  width: 45px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+.burger__section.off {
+  display: block;
+  animation-duration: 6s;
+  animation-name: BurgerClose;
+}
+
+@keyframes BurgerClose {
+  from {
+    transform: translateY(0em);
+  }
+
+  to {
+    transform: translateY(-100em);
+  }
+}
+
+
+
+
+
+.burger__section.active {
+  display: block;
+  transform: translateY(0em);
+  animation-duration: 1s;
+  animation-name: BurgerOpen;
+}
+
+@keyframes BurgerOpen {
+  from {
+    transform: translateY(-100em);
+  }
+
+  to {
+    transform: translateY(0em);
+  }
+}
+
+.burger__wrapper {
+  padding: 0 30px;
+}
+
+.burger__list {
+  padding: 15rem 0px 100px;
+  width: 100%;
+  margin: 0 20px;
+  display: block;
+  text-align: center;
+}
+
+
+
+.burger__link {
+  display: flex;
+  position: relative;
+  margin-bottom: 40px;
+  color: #ffff;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 2;
+  justify-content: center;
+}
+
+.link__text {
+  max-width: max-content;
+  text-align: center;
+  position: relative;
+}
+
+.link__text::before {
+  content: "";
+  top: 0px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 130%;
+  background-color: #000;
+  filter: blur(15px);
+  z-index: -2;
+  opacity: .7;
+}
+
+.burger__link:hover {
+  color: #72D624;
+  transition: .21s linear;
+}
+
+.burger__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.reg__section {
+  max-width: 954px;
+  border-radius: 10px;
+  border: 1px solid #818181;
+  background: #3B3B3B;
+  display: block;
+  margin: 73px auto 102px auto;
+}
+
+.reg__wrapper {
+  padding: 55px 55px 55px 65px;
+  display: flex;
+}
+
+
+.reg__left {
+  width: 50%;
+  margin-right: 50px;
+}
+
+.reg__logo {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 30px;
+  align-items: center;
+}
+
+.reg__buttons input {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 42px;
+}
+
+.reg__choice {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.reg__choice h3 {
+  text-transform: capitalize;
+}
+
+.already__reg {
+  color: #72D624;
+  font-size: 18px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.reg__right {
+  padding: 0px 67px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  display: block;
+  background-image: url(/admin/img/reg/background.png);
+}
+
+
+.croco__coin{
+  margin-top: 5em;
+}
+
+.croco__coin-img {
+  width: 100%;
+  position: relative;
+  scale: 1.3;
+}
+
+.croco__coin::before {
+  opacity: .8;
+  content: url(/img/finish/shadow.png);
+  scale: 0.7;
+  display: block;
+  position: absolute;
+  left: -121px;
+  bottom: -6em;
+  z-index: -2;
+}
+
+.croco__coin::after {
+  content: "";
+  top: 0px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  right: 60px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: blur(155px);
+  z-index: -1;
+  opacity: .7;
+
+}
+
+.reg__info-right{
+  display: block;
+  text-align: center;
+  margin-top: 110px;
+}
+
+/* Скрываем стандартный радио-инпут */
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Оформляем кастомный радио-инпут */
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px; /* Место для кастомного радио-инпута */
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.radio-container input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-container .custom-radio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.radio-container input[type='radio']:checked + .custom-radio {
+  background-color: #72D624; /* Зеленый цвет для выбранного состояния */
+}
+
+.radio-container .custom-radio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.radio-container input[type='radio']:checked + .custom-radio::after {
+  opacity: 1;
+}
+
+
