@@ -10,13 +10,12 @@
   <title>CrocoTraff</title>
   <link rel="stylesheet" href="/admin/admin__section/admin.css">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="registration.css">
+  <link rel="stylesheet" href="login.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jolly+Lodger&family=Karantina:wght@300;400;700&display=swap"
     rel="stylesheet">
-  <script src="/app.js"></script>
   <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
 </head>
 
@@ -83,49 +82,40 @@
 
 
   <main>
-    <section class="reg__section">
-      <div class="reg__wrapper">
-        <div class="reg__left">
-          <div class="reg__buttons">
-            <h3 class="h3-reg">Email</h3>
-            <input class="email-input" value="" type="email">
-            <h3 class="h3-reg">Name</h3>
-            <input class="name-input" value="" type="text">
-            <h3 class="h3-reg">Password</h3>
-            <input class="password-input" value="" type="password">
-            <h3 class="h3-reg">Password confirmation</h3>
-            <input class="password2-input" value="" type="password">
+    <section class="log__section">
+      <div class="log__wrapper">
+        <div class="log__left">
+          <h1 class="log__title">ВХІД</h1>
+          <div class="log__buttons">
+            <h3 class="h3-log">Username / e-mail</h3>
+            <input class="email-input" value="" type="email, text">
+            <h3 class="h3-log">Password</h3>
+            <input class="email-input" value="" type="password">
           </div>
-          <h3 class="h3">Список радио:</h3>
           <div class="reg__choice">
             <label style="margin-right: 20px;" class="radio-container">
               <input type="radio" name="example" value="1">
               <span class="custom-radio"></span>
-              <h3 class="h3-reg">Админ</h3>
-            </label>
-            <label class="radio-container">
-              <input type="radio" name="example" value="2">
-              <span class="custom-radio"></span>
-              <h3 class="h3-reg">Вебместер</h3>
-
+              <h3 class="h3-log">ЗАПОМНИТЬ МЕНЯ</h3>
             </label>
           </div>
-          <button style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 35px 0 30px; padding: 30px 120px;" href="#" class="green-btn">реєстрація</button>
-          <a class="already__reg" href="/login__section/login.html">Уже зареєстрований?</a>
+          <button
+            style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 35px 0 30px; padding: 30px 120px;"
+            href="#" class="green-btn">ВХІД</button>
+          <a class="already__log" href="">Забули пароль?</a>
+          <a class="already__log" href="/admin/reg__section/registration.html">Реєстрація</a>
         </div>
         <div class="reg__right">
           <article class="croco__right">
-            <div class="croco__coin">
-              <img class="croco__coin-img" src="/img/finish/croco2.png" alt="Croco">
+            <div class="croco__group">
+              <img class="croco__coin-img" src="/img/Intro/Croco.png" alt="Croco">
             </div>
             <div class="reg__info-right">
-              <h2 style="font-size: 79px; line-height: 65px;" class="intro__title">Croco<br><span>Traff</span>
+              <h2 class="croco-log__title">Croco<br><span>Traff</span>
               </h2>
-              <h3 style="font-size: 10px;" class="intro__subtitle">Твій гід у світ трафіку!</h3>
             </div>
           </article>
         </div>
-      </div>
     </section>
   </main>
 
@@ -144,6 +134,8 @@
     </div>
     </div>
   </footer>
+  <script src="/app.js"></script>
+
 </body>
 
 </html>

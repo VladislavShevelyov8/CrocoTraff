@@ -8,9 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CrocoTraff</title>
-  <script src="app.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="/admin/admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -31,11 +29,11 @@
         <span class="logo__text">Croco <div>Traff</div></span>
       </a>
       <div class="header__right">
-        <button class="login-btn">Вхід</button>
+        <a href="/login__section/login.html" class="login-btn">Вхід</a>
         <a href="/admin/reg__section/registration.html" class="register-btn">Реєстрація</a>
-        <div onclick="burger();" class="burger-area">
-          <button class="burger"></button>
-        </div>
+      </div>
+      <div onclick="burger();" class="burger-area">
+        <button class="burger"></button>
       </div>
     </div>
   </header>
@@ -81,16 +79,17 @@
             <h2 class="intro__title">Croco<br><span>Traff</span>
             </h2>
             <h3 class="intro__subtitle">Твій гід у світ трафіку!</h3>
-            <button class="reg2-btn">Реєстрація</button>
+            <a href="/admin/reg__section/registration.html" class="reg2-btn">Реєстрація</a>
           </article>
           <article class="intro__right">
             <div class="croco">
-              <img style="scale: 0.9;" src="img/Intro/Croco.png" alt="">
+              <img style="scale: 0.9;" class="intro-croco" src="img/Intro/Croco.png" alt="">
             </div>
           </article>
         </div>
       </div>
     </section>
+    </div>
     <section class="biography__section">
       <div class="shadow"></div>
       <div class="container">
@@ -350,7 +349,7 @@
     </div>
     </div>
   </footer>
-
+  <script src="app.js"></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@ function burger() {
   }
 }
 
-        // Balance Function
+// Balance Function
 
 function Balance() {
   let sections = document.querySelectorAll('.section');
@@ -58,7 +58,7 @@ function Balance() {
 
 }
 
-          // Offers Function
+// Offers Function
 
 function Offers() {
   let sections = document.querySelectorAll('.section');
@@ -82,7 +82,7 @@ function Offers() {
 
 }
 
-            // Profile Function
+// Profile Function
 
 function Profile() {
   let sections = document.querySelectorAll('.section');
@@ -106,7 +106,7 @@ function Profile() {
 
 }
 
-              // Generation Function
+// Generation Function
 
 function Generation() {
   let sections = document.querySelectorAll('.section');
@@ -128,10 +128,28 @@ function Generation() {
   button.classList.add("active");
   activeSection.style.display = "flex";
 
+
+
+
+  // Generation Link
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const content = "Тут будет ссылка сгенирированная";
+    document.getElementById("output-field").textContent = content;
+  });
 }
 
 
 
-                  // Registration
 
 
+// Radio Button
+
+document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+  radio.addEventListener('click', function () {
+    if (this.checked && this.previousChecked) {
+      this.checked = false;
+    }
+    this.previousChecked = this.checked;
+  });
+});

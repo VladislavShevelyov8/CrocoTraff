@@ -15,7 +15,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jolly+Lodger&family=Karantina:wght@300;400;700&display=swap"
     rel="stylesheet">
-  <script src="/app.js"></script>
   <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
 </head>
 
@@ -30,7 +29,7 @@
         <span class="logo__text">Croco <div>Traff</div></span>
       </a>
       <div class="header__right">
-        <button class="login-btn">Вхід</button>
+        <a href="/login__section/login.html" class="login-btn">Вхід</a>
         <a href="/admin/reg__section/registration.html" class="register-btn">Реєстрація</a>
         <div onclick="burger();" class="burger-area">
           <button class="burger"></button>
@@ -44,7 +43,7 @@
         <div class="container">
           <div class="burger__wrapper">
             <ul class="burger__list">
-              <li><a class="burger__link" href="/admin/admin.html">
+              <li><a class="burger__link" href="admin.html">
                   <p class="link__text">Кабінет</p>
                 </a></li>
               <li><a class="burger__link" href="#">
@@ -81,7 +80,7 @@
           <a href="#" onclick="Offers();" id="offers" class="profile-btn">ДОСТУПНI ОФФЕРИ</a>
           <a href="#" onclick="Generation();" id="generation" class="profile-btn">ГЕНЕРАЦIЯ ПОСИЛАНЬ</a>
         </div>
-        <article style="display: none;" class="profile__content section">
+        <article class="profile__content section">
           <div class="profile__left">
             <img class="profile__img" src="/admin/img/profile/avatar.png" alt="">
             <span class="profile__mail">yros.korn@gmail.com</span>
@@ -99,7 +98,7 @@
 
         <article style="display: none;" class="balance__content section">
           <div class="balance">
-            <h1 class="balance__title h3">БАЛАНС</h1>
+            <h1 style="font-size: 23px;" class="balance__title h3">БАЛАНС</h1>
             <div class="UAH__group">
               <h4 class="group__balance-title">БАЛАНС UAH</h4>
               <div class="money__group">
@@ -159,7 +158,7 @@
 
         </article>
 
-        <article style="display: flex;" class="generation__content section">
+        <article style="display: none;" class="generation__content section">
           <div class="generation__left">
             <h1 class="offers__admin-title">ВАШИ ПОСИЛАННЯ</h1>
             <div class="offers__admin-items">
@@ -189,7 +188,9 @@
             </div>
           </div>
           <div class="generation__right">
-            <h4 class="big__title"></h4>
+            <h4 class="big__title">ГЕНЕРАЦIЯ ПОСИЛАНЬ</h4>
+            <div id="output-field" class="output-field"></div>
+            <button href="#" style="width: 75%;" class="green-btn">поповнити</a>
           </div>
         </article>
       </div>
@@ -213,6 +214,7 @@
     </div>
     </div>
   </footer>
+  <script src="/app.js"></script>
 </body>
 
 </html>

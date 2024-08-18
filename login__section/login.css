@@ -1,5 +1,6 @@
 body {
-  background-image: url(/img/burger/background.jpg);
+  background-image: url(img/background-main.jpg);
+  background-repeat: no-repeat;
 }
 
 
@@ -23,8 +24,9 @@ body {
 }
 
 
-.h3-reg {
-  font-size: 23px;
+.h3-log {
+  font-size: 18px;
+  font-weight: 500;
   color: #FFFF;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -138,16 +140,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-.reg__section {
+.log__section {
   max-width: 954px;
   border-radius: 10px;
   border: 1px solid #818181;
@@ -156,28 +149,36 @@ body {
   margin: 73px auto 102px auto;
 }
 
-.reg__wrapper {
+.log__wrapper {
   padding: 55px 55px 55px 65px;
   display: flex;
 }
 
 
-.reg__left {
+.log__left {
   width: 50%;
   margin-right: 50px;
 }
 
-.reg__logo {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0 30px;
-  align-items: center;
+.log__title {
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+  color: #FFFF;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+
 }
 
-.reg__buttons input {
+
+.log__buttons input {
   margin-bottom: 20px;
   width: 100%;
   height: 42px;
+  color: #FFFF;
+  background-color: #252525;
+  border: 0;
+  border-radius: 6px;
 }
 
 .reg__choice {
@@ -190,63 +191,88 @@ body {
   text-transform: capitalize;
 }
 
-.already__reg {
+.already__log {
   color: #72D624;
   font-size: 18px;
   text-decoration: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
 }
 
 .reg__right {
   padding: 0px 67px;
   width: 50%;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
   display: block;
-  background-image: url(/admin/img/reg/background.png);
+  background: url(img/background.png);
+  background-size: cover;
+  box-shadow: inset 0 4px 41px 14px rgba(0, 0, 0, .5);
+
+}
+
+.croco-log__title {
+  text-transform: uppercase;
+  color: #FFFF;
+  font-weight: 400;
+  font-family: 'Jolly Lodger', sans-serif;
+  font-size: 127px;
+  line-height: 95px;
+  text-shadow: 0px 11px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 
-.croco__coin{
-  margin-top: 5em;
+.croco__group {
+  z-index: 2;
+  position: absolute;
+  bottom: 15%;
+  right: 10px;
 }
 
 .croco__coin-img {
   width: 100%;
   position: relative;
-  scale: 1.3;
+  scale: 0.9;
 }
 
-.croco__coin::before {
-  opacity: .8;
-  content: url(/img/finish/shadow.png);
-  scale: 0.7;
-  display: block;
-  position: absolute;
-  left: -121px;
-  bottom: -6em;
-  z-index: -2;
-}
 
-.croco__coin::after {
+.croco__group::after {
   content: "";
   top: 0px;
   border-radius: 50%;
   display: flex;
   position: absolute;
-  right: 60px;
-  width: 100%;
-  height: 100%;
+  right: 17px;
+  width: 79%;
+  height: 87%;
   background-color: #000;
-  filter: blur(155px);
+  filter: blur(30px);
   z-index: -1;
   opacity: .7;
 
 }
 
-.reg__info-right{
+.croco__group::before {
+  content: "";
+  top: 181px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  right: 17px;
+  width: 90%;
+  height: 22%;
+  background-color: #000;
+  filter: blur(12px);
+  z-index: -1;
+  opacity: .7;
+}
+
+
+.reg__info-right {
   display: block;
   text-align: center;
   margin-top: 110px;
@@ -282,8 +308,8 @@ input[type='radio'] {
   transition: background-color 0.3s ease;
 }
 
-.radio-container input[type='radio']:checked + .custom-radio {
-  background-color: #72D624; /* Зеленый цвет для выбранного состояния */
+.radio-container input[type='radio']:checked+.custom-radio {
+  background-color: #72D624;
 }
 
 .radio-container .custom-radio::after {
@@ -299,8 +325,9 @@ input[type='radio'] {
   transition: opacity 0.3s ease;
 }
 
-.radio-container input[type='radio']:checked + .custom-radio::after {
+.radio-container input[type='radio']:checked+.custom-radio::after {
   opacity: 1;
 }
+
 
 
