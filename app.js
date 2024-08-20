@@ -153,3 +153,51 @@ document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
     this.previousChecked = this.checked;
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCardIndex = 0;
+  const cards = document.querySelectorAll('.card__item');
+  
+  // Изначально показываем первую карточку
+  cards[currentCardIndex].classList.add("active");
+
+  // Добавляем обработчики для кнопок "вперед"
+  const arrowsNext = document.querySelectorAll('.card-arrow');
+  arrowsNext.forEach(arrow => {
+      arrow.addEventListener('click', function() {
+          // Скрываем текущую карточку
+          cards[currentCardIndex].classList.remove("active");
+          
+          // Переходим к следующей карточке
+          currentCardIndex = (currentCardIndex + 1) % cards.length;
+          
+          // Показываем следующую карточку
+          cards[currentCardIndex].classList.add("active");
+      });
+  });
+
+  // Добавляем обработчики для кнопок "назад"
+  const arrowsBack = document.querySelectorAll('.card-arrow-back');
+  arrowsBack.forEach(arrow => {
+      arrow.addEventListener('click', function() {
+          // Скрываем текущую карточку
+          cards[currentCardIndex].classList.remove("active");
+          
+          // Переходим к предыдущей карточке
+          currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+          
+          // Показываем предыдущую карточку
+          cards[currentCardIndex].classList.add("active");
+      });
+  });
+});
