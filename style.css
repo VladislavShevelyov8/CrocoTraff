@@ -969,7 +969,6 @@
     border-radius: 10px;
     position: relative;
     height: auto;
-    min-width: 100%;
     background-color: #232527;
     box-shadow: 0 0 37px 27px #6BF300;
   }
@@ -1471,53 +1470,80 @@
     }
 
 
- 
-
-  
-  .offers__section{
-    padding-bottom: 28em;
-  }
+    .offers__section {
+      padding-bottom: 28em;
+    }
 
 
     .card__item {
-      opacity: 0; 
-      visibility: hidden; 
-      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
-      position: absolute; 
-      width: 345px; 
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      position: absolute;
+      width: 345px;
       margin-right: 0;
     }
-    
+
     .card__item.active {
       opacity: 1;
       visibility: visible;
     }
-    
-
-
-
 
     .card__group {
       width: 100%;
+      padding-top: 1px;
     }
 
     .card-arrow::before,
     .card-arrow::after,
-    .card-arrow
-     {
+    .card-arrow {
       visibility: visible;
     }
+
     .card-arrow-back::before,
     .card-arrow-back::after,
-    .card-arrow-back
-     {
+    .card-arrow-back {
       visibility: visible;
     }
 
-    
- 
-    
+    .offers__admin {
+      box-shadow: 0 0 16px -2px #6BF300;
+      margin: 0 20px;
+    }
 
+    .admin__list {
+      padding: 60px 30px;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+
+
+    }
+
+    .admin__item {
+      margin-top: 40px;
+      max-width: 623px;
+    }
+
+    .card__elipse {
+      position: static;
+    }
+
+    .admin__text {
+      margin: 0;
+    }
+
+    .offers__admin::before{
+      scale: .7;
+      right: -13rem;
+
+    }
+    .offers__admin{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
   }
 
 
@@ -1587,6 +1613,8 @@
     .ribbon {
       font-size: 110px;
       padding: 49px 0;
+      animation: scroll 5s linear infinite;
+
     }
 
     .ribbon__section::before {
@@ -1598,8 +1626,34 @@
     }
 
 
+    /* Admin Offers */
+
+    .admin__list{
+      padding: 60px 15px;
+    }
+
+    .h1 {
+      font-size: 30px;
+    }
+
+    .admin__text {
+      font-size: 25px;
+    }
 
 
+    .card__elipse{
+      width: 50px;
+      height: 50px;
+    }
+
+    .card__nummer{
+      font-size: 30px;
+    }
+
+    .offers__admin::before{
+      scale: .5;
+
+    }
   }
 
 
@@ -1665,5 +1719,15 @@
     }
 
 
+
+    /* Admin Offers */
+
+    .h1 {
+      font-size: 22px;
+    }
+
+    .admin__text {
+      font-size: 18px;
+    }
 
   }
