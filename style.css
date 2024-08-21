@@ -48,7 +48,30 @@
     background-color: #000;
     letter-spacing: -0.01em;
     overflow-x: hidden;
+
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  span {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+
+
+
+
 
   ul[class],
   ol[class] {
@@ -1534,16 +1557,82 @@
       margin: 0;
     }
 
-    .offers__admin::before{
+    .offers__admin::before {
       scale: .7;
       right: -13rem;
 
     }
-    .offers__admin{
+
+    .offers__admin {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
     }
+
+    .offers__tg {
+      padding-bottom: 10em;
+    }
+
+
+    /* Master */
+ 
+    /* .master__list{
+      justify-content: center;
+      display: flex;
+    }
+
+    .master__list-item{
+      width: 331px;
+      height: 260px;
+      display: none;
+      border: 1px;
+      text-align: center;
+
+    } */
+
+    .master__text{
+      padding: 167px 57px 32px;
+      font-size: 18px;
+    }
+
+    .master__list-item::before{
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      left: 0;
+      transform: rotate(0);
+      height: 55%;
+    }
+
+    .master__img{
+      scale: .8;
+      left: 85px;
+      top: -8px;
+    } 
+
+
+    .master__list-item {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      position: absolute;
+    }
+    
+    .master__list-item.active {
+      display: block;
+      opacity: 1;
+    }
+    
+    .master__list {
+      position: relative;
+      width: 331px; /* Ширина одного слайда */
+      height: 260px; /* Высота одного слайда */
+      overflow: hidden;
+      justify-content: center;
+      display: flex;
+    }
+    
+
   }
 
 
@@ -1628,7 +1717,7 @@
 
     /* Admin Offers */
 
-    .admin__list{
+    .admin__list {
       padding: 60px 15px;
     }
 
@@ -1641,16 +1730,16 @@
     }
 
 
-    .card__elipse{
+    .card__elipse {
       width: 50px;
       height: 50px;
     }
 
-    .card__nummer{
+    .card__nummer {
       font-size: 30px;
     }
 
-    .offers__admin::before{
+    .offers__admin::before {
       scale: .5;
 
     }

@@ -141,8 +141,6 @@ function Generation() {
 
 
 
-
-
 // Radio Button
 
 document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
@@ -155,49 +153,56 @@ document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
 });
 
 
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let currentCardIndex = 0;
   const cards = document.querySelectorAll('.card__item');
-  
-  // Изначально показываем первую карточку
+
   cards[currentCardIndex].classList.add("active");
 
-  // Добавляем обработчики для кнопок "вперед"
   const arrowsNext = document.querySelectorAll('.card-arrow');
   arrowsNext.forEach(arrow => {
-      arrow.addEventListener('click', function() {
-          // Скрываем текущую карточку
-          cards[currentCardIndex].classList.remove("active");
-          
-          // Переходим к следующей карточке
-          currentCardIndex = (currentCardIndex + 1) % cards.length;
-          
-          // Показываем следующую карточку
-          cards[currentCardIndex].classList.add("active");
-      });
+    arrow.addEventListener('click', function () {
+      cards[currentCardIndex].classList.remove("active");
+
+      currentCardIndex = (currentCardIndex + 1) % cards.length;
+
+      cards[currentCardIndex].classList.add("active");
+    });
   });
 
-  // Добавляем обработчики для кнопок "назад"
   const arrowsBack = document.querySelectorAll('.card-arrow-back');
   arrowsBack.forEach(arrow => {
-      arrow.addEventListener('click', function() {
-          // Скрываем текущую карточку
-          cards[currentCardIndex].classList.remove("active");
-          
-          // Переходим к предыдущей карточке
-          currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
-          
-          // Показываем предыдущую карточку
-          cards[currentCardIndex].classList.add("active");
-      });
+    arrow.addEventListener('click', function () {
+      cards[currentCardIndex].classList.remove("active");
+
+      currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+
+      cards[currentCardIndex].classList.add("active");
+    });
   });
 });
+
+
+
+// Opacity Effect
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div, span');
+  textElements.forEach(el => observer.observe(el));
+});
+
+
+
+
+
+
+
