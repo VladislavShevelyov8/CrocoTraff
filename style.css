@@ -1622,7 +1622,39 @@
       background-image: url(img/master/background.png);
     }
 
-  
+    .master__list-item {
+      display: none; 
+    }
+    
+    .master__list-item.active {
+      display: flex; 
+    }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      z-index: 2222;
+    }
+    
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      z-index: 111;
+    }
+    
+    .slider-dot.active {
+      background-color: #72D624;
+      z-index: 1111;
+    }
+    
 
     
    
@@ -1819,32 +1851,5 @@
     }
 
   }
-
-  .master__list-item.active {
-    display: flex; /* Показываем только активный элемент */
-  }
-
-  .slider-dots {
-    display: flex;
-    justify-content: center;
-    z-index: 2222;
-    position: relative;
-  }
-  
-  .slider-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    z-index: 111;
-  }
-  
-  .slider-dot.active {
-    background-color: #72D624;
-    z-index: 1111;
-  }
-  
 
   
