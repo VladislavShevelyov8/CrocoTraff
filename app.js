@@ -205,9 +205,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // // Dots Slider
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
+  function removeBrTags() {
+    const section = document.querySelector('.master__section');
+    if (section) {
+      const brElements = section.querySelectorAll('br');
+      brElements.forEach(br => br.remove());
+    }
+  }
+
   function initSlider() {
     if (window.innerWidth <= 1366) {
       let currentIndex = 0;
@@ -222,9 +228,6 @@ document.addEventListener('DOMContentLoaded', function () {
           updateDots(index);
         }
       }
-
-
-      
 
       function updateDots(index) {
         const dots = document.querySelectorAll('.slider-dot');
@@ -267,16 +270,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         showItem(currentIndex);
       });
+    } else {
+      document.querySelectorAll('.master__list-item').forEach(item => item.style.display = 'flex');
+      document.querySelector('.slider-dots').innerHTML = ''; // Clear dots
     }
   }
 
+  removeBrTags();
   initSlider();
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth <= 1366) {
-      initSlider();
-    }
+    removeBrTags();
+    initSlider();
   });
 });
-
 
