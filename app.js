@@ -203,6 +203,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Dots Slider
 
+document.addEventListener('DOMContentLoaded', function () {
+  let currentIndex = 0;
+  const items = document.querySelectorAll('.master__list-item');
+  const totalItems = items.length;
+  let startX, endX;
 
+  function showItem(index) {
+    items.forEach(item => item.style.display = 'none');
+    if (items[index]) {
+      items[index].style.display = 'flex';
+      updateDots(index);
+    }
+  }
 
+  function updateDots(index) {
+    const dots = document.querySelectorAll('.slider-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function createDots() {
+    const dotsContainer = document.querySelector('.slider-dots');
+    if (dotsContainer.children.length === 0) {
+      for (let i = 0; i < totalItems; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if (i === currentIndex) {
+          dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          showItem(currentIndex);
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+  }
+
+  showItem(currentIndex);
+
+  createDots();
+
+  document.querySelector('.master__list').addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  });
+
+  document.querySelector('.master__list').addEventListener('touchend', function (e) {
+    endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      currentIndex = (currentIndex + 1) % totalItems;
+    } else if (endX - startX > 50) {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    }
+    showItem(currentIndex);
+  });
+
+});
