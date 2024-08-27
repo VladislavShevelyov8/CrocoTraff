@@ -285,3 +285,73 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
+// Tutorial IMG
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  function updateImages() {
+    const images = document.querySelectorAll('.tutorial__img img');
+    const tutorialImages = document.querySelectorAll('.tutorial__img');
+
+    if (window.innerWidth <= 1366) {
+      // Удаление всех инлайновых стилей при ширине экрана <= 1366 пикселей
+      tutorialImages.forEach(imgContainer => {
+        imgContainer.removeAttribute('style');
+      });
+
+      images.forEach((img, index) => {
+        if (index < images.length - 1) {
+          // Для всех элементов, кроме последнего
+          img.dataset.originalSrc = img.src; // Сохраняем оригинальный URL
+          img.src = 'img/tutorialTG/arrow2.png'; // Устанавливаем новое изображение
+          img.classList.add('scaled-image'); // Добавляем класс для масштабирования
+        } else {
+          // Для последнего элемента
+          img.classList.remove('scaled-image'); // Удаляем масштабирование, если оно было
+          // Не меняем источник изображения
+        }
+      });
+    } else {
+      images.forEach(img => {
+        if (img.dataset.originalSrc) {
+          img.src = img.dataset.originalSrc; // Восстанавливаем оригинальный URL
+          img.classList.remove('scaled-image'); // Удаляем класс масштабирования
+        }
+      });
+    }
+  }
+
+  function swapText() {
+    const items = document.querySelectorAll('.tutorial__item');
+    if (items.length >= 4) {
+      // Получаем текстовые элементы для 3-го и 4-го элементов
+      const thirdTextElement = items[2].querySelector('.tutorial__text');
+      const fourthTextElement = items[3].querySelector('.tutorial__text');
+
+      if (thirdTextElement && fourthTextElement) {
+        // Меняем текст местами
+        const thirdItemText = thirdTextElement.innerHTML;
+        const fourthItemText = fourthTextElement.innerHTML;
+
+        thirdTextElement.innerHTML = "SS";
+        fourthTextElement.innerHTML = thirdItemText;
+      } else {
+        console.error('Не удалось найти текстовые элементы для обмена.');
+      }
+    } else {
+      console.error('Недостаточно элементов для обмена текстом.');
+    }
+  }
+
+  // Обновляем изображения и меняем текст при загрузке страницы
+  updateImages();
+  swapText();
+
+  // Обновляем изображения при изменении размера окна
+  window.addEventListener('resize', function () {
+    updateImages();
+  });
+});
+

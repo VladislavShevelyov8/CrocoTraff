@@ -1634,7 +1634,6 @@
       display: flex;
       justify-content: center;
       position: absolute;
-      bottom: 20px;
       left: 0;
       right: 0;
       z-index: 2222;
@@ -1656,11 +1655,32 @@
     }
 
 
+    /* Tutorial */
 
 
+    .tutorial__tg-section {
+      background-size: cover;
+      background-image: url(img/master/background.png);
 
+    }
 
+    .tutorial__wrapper {
+      display: block;
+    }
 
+    .tutorial__title {
+      text-align: center;
+    }
+
+    .tutorial__item {
+      margin-bottom: 15rem;
+    }
+
+    .scaled-image{
+      top: 6rem;
+      left: 11rem;
+      position: absolute;
+    }
 
 
 
@@ -1785,6 +1805,19 @@
 
     }
 
+    /* Tutorial */
+
+    .tutorial__elipse {
+      width: 140px;
+      height: 140px;
+    }
+
+    .scaled-image {
+      transform: scale(0.7);
+      left: 0;
+      top: 0;
+    }
+
 
   }
 
@@ -1865,5 +1898,8 @@
 
     /* Master */
 
+    .master__wrapper {
+      width: 94%;
+    }
 
   }
