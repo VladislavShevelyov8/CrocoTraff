@@ -289,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Tutorial IMG
 
-
 document.addEventListener('DOMContentLoaded', function () {
   function updateImages() {
     const images = document.querySelectorAll('.tutorial__img img');
@@ -302,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       images.forEach((img, index) => {
-        if (index < images.length - 1) {
+        if (index < images.length) {
           // Для всех элементов, кроме последнего
           img.dataset.originalSrc = img.src; // Сохраняем оригинальный URL
           img.src = 'img/tutorialTG/arrow2.png'; // Устанавливаем новое изображение
@@ -323,35 +322,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function swapText() {
-    const items = document.querySelectorAll('.tutorial__item');
-    if (items.length >= 4) {
-      // Получаем текстовые элементы для 3-го и 4-го элементов
-      const thirdTextElement = items[2].querySelector('.tutorial__text');
-      const fourthTextElement = items[3].querySelector('.tutorial__text');
-
-      if (thirdTextElement && fourthTextElement) {
-        // Меняем текст местами
-        const thirdItemText = thirdTextElement.innerHTML;
-        const fourthItemText = fourthTextElement.innerHTML;
-
-        thirdTextElement.innerHTML = "SS";
-        fourthTextElement.innerHTML = thirdItemText;
-      } else {
-        console.error('Не удалось найти текстовые элементы для обмена.');
-      }
-    } else {
-      console.error('Недостаточно элементов для обмена текстом.');
-    }
-  }
-
-  // Обновляем изображения и меняем текст при загрузке страницы
+  // Обновляем изображения при загрузке страницы
   updateImages();
-  swapText();
 
   // Обновляем изображения при изменении размера окна
   window.addEventListener('resize', function () {
     updateImages();
   });
 });
-

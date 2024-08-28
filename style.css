@@ -135,8 +135,6 @@
 
 
 
-
-
   .h1 {
     font-weight: 800;
     font-size: 65px;
@@ -503,6 +501,8 @@
     display: flex;
   }
 
+
+
   .intro__right {
     margin-left: 10%;
   }
@@ -537,7 +537,6 @@
 
   .reg2-btn {
     border-radius: 6px;
-    box-shadow: 0 0 107px 0 rgba(114, 214, 36, 0.27);
     background: #72D624;
     border: none;
     padding: 16px 71px;
@@ -548,6 +547,12 @@
     font-size: 23px;
     font-weight: 800;
     text-transform: uppercase;
+  }
+
+  .reg2-btn:hover {
+    transition: .3s linear;
+    box-shadow: 0 0 107px 0 rgba(114, 214, 36, 0.27);
+
   }
 
 
@@ -1125,6 +1130,8 @@
   }
 
 
+
+
   .tutorial__text {
     max-width: max-content;
     color: #FFFF;
@@ -1213,6 +1220,12 @@
     z-index: 2;
   }
 
+
+  .finish__left h1 {
+    text-align: left;
+    font-size: 57px;
+  }
+
   .croco__coin::before {
     content: url(img/finish/shadow.png);
     display: block;
@@ -1258,6 +1271,7 @@
   .footer__left {
     display: flex;
     width: 50%;
+    align-items: center;
   }
 
   .footer__right {
@@ -1269,7 +1283,6 @@
     position: relative;
     color: #FFFF;
     font-size: 18px;
-    text-transform: uppercase;
     z-index: 2;
   }
 
@@ -1287,6 +1300,20 @@
     z-index: -2;
     opacity: .5;
   }
+
+
+
+  .finish-wrapper {
+    display: flex;
+  }
+
+
+
+  .finish__right {
+    margin-left: 10%;
+  }
+
+
 
 
 
@@ -1661,28 +1688,93 @@
     .tutorial__tg-section {
       background-size: cover;
       background-image: url(img/master/background.png);
-
     }
 
     .tutorial__wrapper {
-      display: block;
+      flex-direction: column;
+      max-width: max-content;
+
     }
+
 
     .tutorial__title {
       text-align: center;
+      font-size: 45px;
+      margin-bottom: 4rem;
     }
 
     .tutorial__item {
       margin-bottom: 15rem;
     }
 
-    .scaled-image{
+    .scaled-image {
       top: 6rem;
       left: 11rem;
       position: absolute;
     }
 
+    .item1 {
+      order: 1;
+    }
 
+    .item2 {
+      order: 2;
+    }
+
+    .item3 {
+      order: 4;
+    }
+
+    .item4 {
+      order: 3;
+    }
+
+    /* Finish */
+
+    .finish-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .finish__left {
+      order: 2;
+      width: 100%;
+    }
+
+    .btn-finish {
+      margin: 0 auto;
+      display: block;
+    }
+
+    .finish__right {
+      order: 1;
+      margin-left: 0;
+      display: flex;
+    }
+
+    .croco__coin {
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    #crocoFinish {
+      scale: .9;
+    }
+
+    .croco__coin::before {
+      scale: .9;
+      bottom: -2em;
+    }
+
+    .finish__left h1 {
+      text-align: center;
+    }
+
+    .container {
+      padding: 0 5px;
+    }
 
   }
 
@@ -1701,6 +1793,12 @@
 
     .h2 {
       font-size: 17px;
+    }
+
+    /* Finish */
+
+    .finish__left h1 {
+      font-size: 37px;
     }
   }
 
@@ -1814,9 +1912,65 @@
 
     .scaled-image {
       transform: scale(0.7);
-      left: 0;
-      top: 0;
+      left: 7rem;
+      top: 5rem;
     }
+
+    .tutorial__text {
+      font-size: 20px;
+    }
+
+    .tutorial__item {
+      margin-bottom: 13rem;
+    }
+
+
+    /* Finish */
+
+    .finish__section{
+      background-image: url(img/finish/backgroundMob.jpg);
+    }
+
+
+    #crocoFinish {
+      scale: .6;
+    }
+
+    .croco__coin::before {
+      scale: .6;
+      bottom: 2em;
+    }
+
+    .croco__coin::after {
+      left: 160px;
+      width: 50%;
+      height: 50%;
+      filter: blur(58px);
+      top: 88px;
+    }
+
+    .finish__left h1 {
+      padding-top: 40px;
+    }
+
+
+    /* Footer */
+
+
+    .footer__logo {
+      scale: .7;
+    }
+
+    .footer {
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    .info__item {
+      font-size: 14px;
+    }
+
+
 
 
   }
@@ -1901,5 +2055,24 @@
     .master__wrapper {
       width: 94%;
     }
+
+    /* Tutorial */
+
+    .tutorial__text {
+      font-size: 17px;
+    }
+
+    /* Finish */
+
+    .finish__left h1 {
+      font-size: 24px;
+    }
+
+    /* Footer */
+
+    .info__item {
+      font-size: 12px;
+    }
+
 
   }
