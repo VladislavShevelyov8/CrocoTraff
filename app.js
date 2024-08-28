@@ -330,3 +330,34 @@ document.addEventListener('DOMContentLoaded', function () {
     updateImages();
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.cards__wrapper');
+  let isDragging = false;
+  let startX, scrollLeft;
+
+  wrapper.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    isDragging = false;
+  });
+
+  wrapper.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  wrapper.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 2; // Скорость прокрутки
+    wrapper.scrollLeft = scrollLeft - walk;
+  });
+});

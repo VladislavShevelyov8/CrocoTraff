@@ -565,7 +565,7 @@
     margin-top: 178px;
     position: relative;
     margin-right: -150%;
-    animation-duration: 3s;
+    animation-duration: 1.2s;
     animation-name: slidein;
   }
 
@@ -720,6 +720,7 @@
     display: flex;
     overflow: hidden;
     justify-content: center;
+    user-select: none;
   }
 
   .ribbon__section::before {
@@ -873,25 +874,18 @@
     display: flex;
     margin-top: 30px;
     width: 100%;
-    overflow-x: auto;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding-top: 10px;
-    scrollbar-width: auto;
-    scrollbar-color: #72D624 transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    user-select: none;
   }
-
 
   .cards__wrapper::-webkit-scrollbar {
-    width: 1%;
-    height: 40px;
-    background-color: transparent;
-  }
-
-  .cards__wrapper::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #72D624;
-    background-clip: padding-box;
+    display: none;
   }
 
 
@@ -948,6 +942,7 @@
     z-index: 2;
     width: 100%;
     height: auto;
+
   }
 
   .card__img::before {
@@ -1059,6 +1054,7 @@
   }
 
   .master__list-item {
+    user-select: none;
     position: relative;
     display: flex;
     background-color: #FFFF;
@@ -1473,14 +1469,6 @@
 
 
 
-    .smile__group {
-      scale: .6;
-      margin: 0;
-
-
-
-
-    }
 
     .biography__left {
       order: 2;
@@ -1497,11 +1485,20 @@
       width: 100%;
       order: 1;
       text-align: center;
-      justify-content: center;
+      justify-content: flex-start;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 0 42px;
       min-height: 500px;
     }
+
+    .smile__group {
+      scale: .6;
+      margin: 0;
+
+    }
+
 
     .biography__subtitle {
       order: 2;
@@ -1700,7 +1697,11 @@
     .tutorial__title {
       text-align: center;
       font-size: 45px;
-      margin-bottom: 4rem;
+    }
+
+    .item2 img {
+      transform: scaleX(-1);
+
     }
 
     .tutorial__item {
@@ -1844,7 +1845,17 @@
 
     .smile__group {
       scale: .4;
+      height: auto;
     }
+
+    .biography__right {
+      min-height: 400px;
+    }
+
+    .biography__title {
+      margin-bottom: 20px;
+    }
+
 
     /* Ribbon */
 
@@ -1854,6 +1865,7 @@
       animation: scroll 5s linear infinite;
 
     }
+
 
     .ribbon__section::before {
       bottom: 50px;
@@ -1903,6 +1915,12 @@
 
     }
 
+    /* Offers TG */
+
+    .offers__tg {
+      background: url(/img/offersTG/5.jpg);
+    }
+
     /* Tutorial */
 
     .tutorial__elipse {
@@ -1916,8 +1934,16 @@
       top: 5rem;
     }
 
+    .item2 img {
+      scale: .7;
+    }
+
     .tutorial__text {
       font-size: 20px;
+    }
+
+    .tutorial__title {
+      padding: 115px 0 87px;
     }
 
     .tutorial__item {
@@ -1927,7 +1953,7 @@
 
     /* Finish */
 
-    .finish__section{
+    .finish__section {
       background-image: url(img/finish/backgroundMob.jpg);
     }
 
@@ -1939,6 +1965,10 @@
     .croco__coin::before {
       scale: .6;
       bottom: 2em;
+    }
+
+    .croco__coin {
+      margin-top: 0;
     }
 
     .croco__coin::after {
