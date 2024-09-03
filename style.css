@@ -1429,7 +1429,7 @@
       }
 
       50% {
-        transform: scale(2);
+        transform: scale(1.8);
       }
 
       100% {
@@ -1919,6 +1919,8 @@
 
     .offers__tg {
       background: url(/img/offersTG/5.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     /* Tutorial */

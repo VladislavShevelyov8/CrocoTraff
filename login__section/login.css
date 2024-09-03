@@ -331,3 +331,60 @@ input[type='radio'] {
 
 
 
+        /* Media */
+
+@media(max-width: 1366px){
+
+
+
+
+
+
+
+}
+@media(max-width: 1024px){
+
+  .reg__right{
+    display: none;
+  }
+
+  .log__left{
+    width: 100%;
+
+  }
+
+  .log__buttons input{
+    height: 55px;
+  }
+
+  .log__section{
+    margin: 20px;
+
+  }
+
+
+
+
+}
+@media(max-width: 768px){
+
+
+
+
+
+}
+@media(max-width: 450px){
+
+  .log__wrapper{
+    padding: 20px;
+  
+  }
+
+  .log__left{
+    margin: 0 auto;
+  }
+
+
+
+}
+

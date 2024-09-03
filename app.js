@@ -36,12 +36,33 @@ function burger() {
 
 // Balance Function
 
+// function Balance() {
+//   let sections = document.querySelectorAll('.section');
+//   let button = document.getElementById("balance");
+//   let activeElements = document.querySelectorAll('.active');
+//   let activeSection = document.querySelector(".balance__content");
+
+
+//   for (let section of sections) {
+//     if (section.style.display !== 'none') {
+//       section.style.display = 'none';
+//       break;
+//     }
+//   }
+
+//   activeElements.forEach(function (element) {
+//     element.classList.remove('active');
+//   });
+//   button.classList.add("active");
+//   activeSection.style.display = "flex";
+
+// }
+
 function Balance() {
   let sections = document.querySelectorAll('.section');
   let button = document.getElementById("balance");
   let activeElements = document.querySelectorAll('.active');
   let activeSection = document.querySelector(".balance__content");
-
 
   for (let section of sections) {
     if (section.style.display !== 'none') {
@@ -53,10 +74,17 @@ function Balance() {
   activeElements.forEach(function (element) {
     element.classList.remove('active');
   });
-  button.classList.add("active");
-  activeSection.style.display = "flex";
 
+  button.classList.add("active");
+
+  // Проверяем ширину экрана и изменяем стиль отображения
+  if (window.innerWidth < 1366) {
+    activeSection.style.display = "block";
+  } else {
+    activeSection.style.display = "flex";
+  }
 }
+
 
 // Offers Function
 
@@ -361,3 +389,59 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.scrollLeft = scrollLeft - walk;
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

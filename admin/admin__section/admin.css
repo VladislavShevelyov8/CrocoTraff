@@ -2,7 +2,10 @@ body {
   background-image: url(/admin/img/profile/background.jpg);
 }
 
-.register-btn{
+
+
+
+.register-btn {
   text-decoration: none;
 }
 
@@ -25,7 +28,7 @@ body {
 }
 
 
-.h3{
+.h3 {
   font-size: 23px;
   margin-bottom: 40px;
 
@@ -169,7 +172,17 @@ body {
   background-color: #FFFF;
   border-radius: 10px;
   align-items: center;
+  border: 0;
   justify-content: center;
+
+}
+
+.profile-btn:hover {
+  transition: .3s linear;
+  border: 3px solid #72D624;
+  border-radius: 10px;
+  animation: ProfileBTN 1.5s linear infinite;
+
 }
 
 .profile-btn.active:before {
@@ -210,6 +223,27 @@ body {
   color: #FFFF;
   font-weight: 600;
   justify-content: center;
+}
+
+
+@keyframes ProfileBTN {
+  0% {
+    border: 4px solid #72D624;
+
+
+  }
+
+  50% {
+    border: 0;
+
+
+  }
+
+  100% {
+    border: 4px solid #72D624;
+
+
+  }
 }
 
 .profile__right {
@@ -353,7 +387,7 @@ body {
 }
 
 
-.group__balance-title{
+.group__balance-title {
   margin-top: 18px;
   text-transform: uppercase;
 }
@@ -361,6 +395,10 @@ body {
 .money__group {
   display: flex;
   gap: 22px;
+}
+
+.btn-group {
+  display: flex;
 }
 
 .h4 {
@@ -379,6 +417,7 @@ body {
 }
 
 
+/* Offers */
 
 
 
@@ -449,7 +488,7 @@ body {
   flex: 1;
 }
 
-.big__title{
+.big__title {
   font-size: 23px;
 }
 
@@ -462,7 +501,7 @@ body {
   align-items: center;
 }
 
-.generation__left{
+.generation__left {
   padding: 50px 70px 70px 72px;
   background-color: #3B3B3B;
   border-radius: 10px;
@@ -470,7 +509,7 @@ body {
   margin-right: 30px;
 }
 
-.generation__right{
+.generation__right {
   padding: 50px 65px 272px 65px;
   background-color: #3B3B3B;
   border-radius: 10px;
@@ -484,11 +523,245 @@ body {
   padding: 10px;
   border-radius: 6px;
   font-size: 13px;
-  color: #fff; 
-  background-color: #252525; 
+  color: #fff;
+  background-color: #252525;
   margin-top: 40px;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   margin-bottom: 40px;
+}
+
+
+
+
+/* Media */
+
+@media(max-width: 1366px) {
+
+
+
+  /* Profile */
+
+
+  .profile__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    max-width: min-content;
+
+
+  }
+
+  .profile-btn {
+    width: 159px;
+    height: 70px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .profile-btn:hover {
+    transition: .3s linear;
+    border: 3px solid #72D624;
+    border-radius: 10px;
+    animation: ProfileBTN 2s linear infinite;
+
+  }
+
+
+  .profile-btn.active {
+    transition: .3s linear;
+    border: 3px solid #72D624;
+    border-radius: 10px;
+
+  }
+
+  .profile-btn.active::before {
+    display: none;
+  }
+
+  .profile__content {
+    margin: 0 20px;
+    display: block;
+    padding: 85px 70px;
+  }
+
+  .profile__content>* {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .profile__mail {
+    margin-bottom: 50px;
+  }
+
+  .TikTok-input {
+    background-color: #252525;
+
+  }
+
+  .TikTok-input::placeholder {
+    color: #A1A1A1;
+  }
+
+  .transparent-input {
+    width: 100%;
+  }
+
+  .profil__section {
+    background: url(/img/offersTG/background.png);
+  }
+
+
+  /* Balance */
+
+  .balance__content {
+    display: block;
+    margin: 0 20px;
+  }
+
+
+
+  .balance {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .balance__title {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .balance__money-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .balance__money-group h4 {
+    padding-top: 0;
+  }
+
+  .btn-group {
+    display: block;
+
+  }
+
+  .btn-group>* {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+
+  .balance__left-title {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .Karte {
+    border-radius: 5px;
+    background-color: #252525;
+  }
+
+  .balance .green-btn {
+    width: 100%;
+  }
+
+
+        /* Offers */
+
+  .offers__admin-title{
+    text-align: center;
+  }
+
+ 
+
+
+
+
+
+
+
+}
+
+@media(max-width: 1024px) {
+
+
+  /* Profile */
+
+
+  /* Balance */
+
+}
+
+@media(max-width: 768px) {
+
+
+  /* Profile */
+
+  .profile__right>* {
+    font-size: 14px;
+    height: 60px;
+  }
+
+  .TikTok-input::placeholder {
+    font-size: 14px;
+  }
+
+  .profile__content {
+    padding: 85px 30px;
+    margin-bottom: 20px;
+  }
+
+  .transparent-btn {
+    padding: 0;
+  }
+
+  .registration-btn {
+    padding: 16px 71px;
+  }
+
+
+  /* Balance */
+
+
+}
+
+@media(max-width: 450px) {
+
+
+  /* Profile */
+
+  .profile__img {
+    scale: .7;
+  }
+
+  .profile__mail {
+    padding-top: 0;
+  }
+
+  .profile__content {
+    padding-top: 10px;
+  }
+
+
+  .profil__section {
+    background: url(/img/offersTG/5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  /* Balance */
+
+
+
 }
