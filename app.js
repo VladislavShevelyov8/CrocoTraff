@@ -34,29 +34,6 @@ function burger() {
   }
 }
 
-// Balance Function
-
-// function Balance() {
-//   let sections = document.querySelectorAll('.section');
-//   let button = document.getElementById("balance");
-//   let activeElements = document.querySelectorAll('.active');
-//   let activeSection = document.querySelector(".balance__content");
-
-
-//   for (let section of sections) {
-//     if (section.style.display !== 'none') {
-//       section.style.display = 'none';
-//       break;
-//     }
-//   }
-
-//   activeElements.forEach(function (element) {
-//     element.classList.remove('active');
-//   });
-//   button.classList.add("active");
-//   activeSection.style.display = "flex";
-
-// }
 
 function Balance() {
   let sections = document.querySelectorAll('.section');
@@ -86,14 +63,21 @@ function Balance() {
 }
 
 
-// Offers Function
+
 
 function Offers() {
   let sections = document.querySelectorAll('.section');
   let button = document.getElementById("offers");
   let activeElements = document.querySelectorAll('.active');
-  let activeSection = document.querySelector(".offers__content");
+  
+  let isMobile = window.innerWidth < 1366;
+  let activeSection;
 
+  if (isMobile) {
+    activeSection = document.getElementById("offers__mobile");
+  } else {
+    activeSection = document.querySelector(".offers__content");
+  }
 
   for (let section of sections) {
     if (section.style.display !== 'none') {
@@ -105,10 +89,16 @@ function Offers() {
   activeElements.forEach(function (element) {
     element.classList.remove('active');
   });
-  button.classList.add("active");
-  activeSection.style.display = "block";
 
+  button.classList.add("active");
+
+  // Отображаем активную секцию
+  activeSection.style.display = "block";
 }
+
+
+
+
 
 // Profile Function
 
@@ -136,12 +126,22 @@ function Profile() {
 
 // Generation Function
 
+
 function Generation() {
   let sections = document.querySelectorAll('.section');
   let button = document.getElementById("generation");
   let activeElements = document.querySelectorAll('.active');
-  let activeSection = document.querySelector(".generation__content");
 
+  let isMobile = window.innerWidth < 1366;
+  let activeSection;
+
+  if (isMobile) {
+    activeSection = document.getElementById("generration__mobile");
+    activeSection.style.display = "block";
+  } else {
+    activeSection = document.querySelector(".generation__content");
+    activeSection.style.display = "flex"; 
+  }
 
   for (let section of sections) {
     if (section.style.display !== 'none') {
@@ -153,19 +153,14 @@ function Generation() {
   activeElements.forEach(function (element) {
     element.classList.remove('active');
   });
+
   button.classList.add("active");
-  activeSection.style.display = "flex";
 
-
-
-
-  // Generation Link
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const content = "Тут будет ссылка сгенирированная";
-    document.getElementById("output-field").textContent = content;
-  });
+  const content = "Тут будет сгенерированная ссылка";
+  document.getElementById("output-field").textContent = content;
 }
+
+
 
 
 
@@ -323,37 +318,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const tutorialImages = document.querySelectorAll('.tutorial__img');
 
     if (window.innerWidth <= 1366) {
-      // Удаление всех инлайновых стилей при ширине экрана <= 1366 пикселей
       tutorialImages.forEach(imgContainer => {
         imgContainer.removeAttribute('style');
       });
 
       images.forEach((img, index) => {
         if (index < images.length) {
-          // Для всех элементов, кроме последнего
-          img.dataset.originalSrc = img.src; // Сохраняем оригинальный URL
-          img.src = 'img/tutorialTG/arrow2.png'; // Устанавливаем новое изображение
-          img.classList.add('scaled-image'); // Добавляем класс для масштабирования
+          img.dataset.originalSrc = img.src;
+          img.src = 'img/tutorialTG/arrow2.png';
+          img.classList.add('scaled-image'); 
         } else {
-          // Для последнего элемента
-          img.classList.remove('scaled-image'); // Удаляем масштабирование, если оно было
-          // Не меняем источник изображения
+          img.classList.remove('scaled-image'); 
         }
       });
     } else {
       images.forEach(img => {
         if (img.dataset.originalSrc) {
-          img.src = img.dataset.originalSrc; // Восстанавливаем оригинальный URL
-          img.classList.remove('scaled-image'); // Удаляем класс масштабирования
+          img.src = img.dataset.originalSrc;
+          img.classList.remove('scaled-image');
         }
       });
     }
   }
 
-  // Обновляем изображения при загрузке страницы
   updateImages();
 
-  // Обновляем изображения при изменении размера окна
   window.addEventListener('resize', function () {
     updateImages();
   });
@@ -361,34 +350,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const wrapper = document.querySelector('.cards__wrapper');
-  let isDragging = false;
-  let startX, scrollLeft;
-
-  wrapper.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.pageX - wrapper.offsetLeft;
-    scrollLeft = wrapper.scrollLeft;
-  });
-
-  wrapper.addEventListener('mouseleave', () => {
-    isDragging = false;
-  });
-
-  wrapper.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-
-  wrapper.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - wrapper.offsetLeft;
-    const walk = (x - startX) * 2; // Скорость прокрутки
-    wrapper.scrollLeft = scrollLeft - walk;
-  });
-});
 
 
 
